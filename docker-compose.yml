@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  images:
+    image: darthsim/imgproxy:v2.17
+    ports:
+      - 8080:8080
+    volumes:
+      - ./files:/files
+    environment:
+      - IMGPROXY_LOCAL_FILESYSTEM_ROOT=/files
+      - IMGPROXY_LOG_LEVEL=debug
+      - IMGPROXY_STRIP_METADATA=false
